@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "59d7fadb-ae83-4582-9572-0c4a21d21f15",
+		"name": "iSupply-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "reda@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmedreda.localhost:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"ahmedreda",
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "reda",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "reda@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "default"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://isupply.localhost:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"isupply",
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvcmVmcmVzaCIsImlhdCI6MTY2NTA1NzI4OSwiZXhwIjoxNjY1MDYxMTc1LCJuYmYiOjE2NjUwNTc1NzUsImp0aSI6IlFLcTVqdGtJdkI4bnU2S0MiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.KcBHLV9ZrBtgHK2zXH0B0HO3zYUXmA6hUmJhPQX7lqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/auth/user-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"user-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2NjUwNTkxNzMsImV4cCI6MTY2NTA2Mjc3MywibmJmIjoxNjY1MDU5MTczLCJqdGkiOiJYemo2ZERNQW1zakJJdWIzIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.bVNm-XBEPjvcaPYoIvUOwVe_5szXrdGCdFHSJtDQTaI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2NjUwNTcyODksImV4cCI6MTY2NTA2MDg4OSwibmJmIjoxNjY1MDU3Mjg5LCJqdGkiOiJ2UTVWU1dmaldjckpYNDA2Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.DOjfisD6xldJuiM7SX13_ZrW5vBPXFtaa_x6GyXfqH8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYWhtZWRyZWRhLmxvY2FsaG9zdDo4MDAwL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjY1MDczOTQzLCJleHAiOjE2NjUwNzc1NDMsIm5iZiI6MTY2NTA3Mzk0MywianRpIjoiOXVTNXZQd25zbW0wRU9XeCIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QI62o3lg6dZsMXYhKzBMy6Rj9emlNHeAAYpQn4_fWk4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/auth/get-products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"get-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store-product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vaXN1cHBseS5sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTY2NTA3NTIzNywiZXhwIjoxNjY1MDc4ODM3LCJuYmYiOjE2NjUwNzUyMzcsImp0aSI6IkJLSHJTTEhUVUxhZ3VnTUkiLCJzdWIiOiI1IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.FwTiCuHDnOe5Dztdp5C9SvyQ0JtMCeFqArlcpK0meXM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "user_2_product",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "20",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/store-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"store-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vaXN1cHBseS5sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTY2NTA3NTIzNywiZXhwIjoxNjY1MDc4ODM3LCJuYmYiOjE2NjUwNzUyMzcsImp0aSI6IkJLSHJTTEhUVUxhZ3VnTUkiLCJzdWIiOiI1IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.FwTiCuHDnOe5Dztdp5C9SvyQ0JtMCeFqArlcpK0meXM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "update_user_2_product",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/update-product/product_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"update-product",
+						"product_id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYWhtZWRyZWRhLmxvY2FsaG9zdDo4MDAwL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjY1MDczOTQzLCJleHAiOjE2NjUwNzc1NDMsIm5iZiI6MTY2NTA3Mzk0MywianRpIjoiOXVTNXZQd25zbW0wRU9XeCIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QI62o3lg6dZsMXYhKzBMy6Rj9emlNHeAAYpQn4_fWk4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/auth/delete-product/product_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"delete-product",
+						"product_id"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
